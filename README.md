@@ -68,7 +68,7 @@ Spesifikasi yang digunakan adalah sebagai berikut :
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
 1. Setup Database
-```
+```sh
 #!/bin/bash
 
 echo "Installing docker..."
@@ -114,7 +114,7 @@ sudo docker compose up -d
 sudo docker ps -a
 ```
 2. Setup Worker
-```
+```sh
 #!/bin/bash
 
 echo "Installing docker..."
@@ -157,7 +157,7 @@ sudo docker build -t fp-app -f Dockerfile .
 sudo docker run -p 8000:8000 -d fp-app
 ```
 3. Setup Load Balancer
-```
+```sh
 #!/bin/bash
 
 sudo apt update
