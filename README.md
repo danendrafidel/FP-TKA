@@ -21,7 +21,7 @@ Pada suatu saat anda mendapatkan project untuk mendeploy sebuah aplikasi [Sentim
    - Endpoint: `POST /analyze`
    - Description: This endpoint accepts a text input and returns the sentiment score of the text.
    - Request:
-```
+```json
 {
    "text": "Your text here"
 }
@@ -30,7 +30,7 @@ Pada suatu saat anda mendapatkan project untuk mendeploy sebuah aplikasi [Sentim
    - Endpoint: `GET /history`
    - Description: This endpoint retrieves the history of previously analyzed texts along with their sentiment scores.
    - Response:
-```
+```json
 {
  {
    "text": "Your previous text here",
