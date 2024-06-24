@@ -47,8 +47,7 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 
 
 ## A. Rancangan Arsitektur Komputasi Awan
-Kelompok kami memutuskan untuk memakai rancangan yang disama ratakan keseluruhan dari spesifikasi VM, alasannya adalah kami menginginkan rancangan cloud yang berspesifikasi medium saja dan tidak terlalu mahal harganya untuk itu kami ingin menganalisis apakah rancangan cloud kami dengan spesifikasi dibawah cukup efektif.
-
+Kelompok kami memutuskan untuk memakai rancangan yang disama ratakan keseluruhan dari spesifikasi VM, alasannya adalah kami menginginkan rancangan cloud yang berspesifikasi medium saja dan tidak terlalu mahal selain itu untuk karena cakupan Final Project ini hanya boleh menggunakan dana dengan maksimal total $60 harganya untuk itu kami ingin menganalisis apakah rancangan cloud kami dengan spesifikasi dibawah cukup efektif.
 ![Cloud drawio](https://github.com/danendrafidel/FP-TKA/assets/150430084/b110221e-1ec8-4af2-a6d1-2f514f59a844)
 
 Spesifikasi yang digunakan adalah sebagai berikut :
@@ -61,9 +60,11 @@ Spesifikasi yang digunakan adalah sebagai berikut :
 |    |                   | 2GB Memory           |                |             |
 | 3  | VM2-Worker1       | Regular 1vCPU        | App Worker 2   | $12         |
 |    |                   | 2GB Memory           |                |             |
-| 4  | VM3-Database      | Regular 1vCPU        | Database Server| $12         |
+| 4  | VM3-Database      | Regular 1vCPU        | Database Server| $0          |
 |    |                   | 2GB Memory           |                |             |
 |    | **TOTAL**         |                      |                | **$48**     |
+
+Disini kami memakai 2 provider untuk membuat rancangan cloud ini yaitu `Digital Ocean dan Proxmox`, alasannya karena terdapat limitasi dalam pembuatan droplet pada digital ocean sebanyak 3 droplet saja yang sudah terpakai untuk load balancer dan 2 worker pada [digital ocean](https://www.digitalocean.com/), lalu untuk droplet database kami letakkan di provider [proxmox](https://www.proxmox.com/en/).
 
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
@@ -230,6 +231,7 @@ sudo ufw allow 8000
 
 ## C. Hasil Pengujian Endpoint
 Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET`
+
 
 ## D. Hasil Pengujian Loadtesting
 Disini kami menggunakan LOCUST untuk pengujiannya
