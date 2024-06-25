@@ -48,6 +48,7 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 
 ## A. Rancangan Arsitektur Komputasi Awan
 Kelompok kami memutuskan untuk memakai rancangan yang disama ratakan keseluruhan dari spesifikasi VM, alasannya adalah kami menginginkan rancangan cloud yang berspesifikasi medium saja dan tidak terlalu mahal selain itu untuk karena cakupan Final Project ini hanya boleh menggunakan dana dengan maksimal total $60 harganya untuk itu kami ingin menganalisis apakah rancangan cloud kami dengan spesifikasi dibawah cukup efektif.
+
 ![Cloud drawio](https://github.com/danendrafidel/FP-TKA/assets/150430084/b110221e-1ec8-4af2-a6d1-2f514f59a844)
 
 Spesifikasi yang digunakan adalah sebagai berikut :
@@ -230,7 +231,7 @@ sudo ufw allow 8000
 ```
 
 ## C. Hasil Pengujian Endpoint
-Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET`
+Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET` pada backend.
 - GET
   - Worker1
 
@@ -249,8 +250,8 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
 
    ![post_0_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6029c698-0337-4b99-8f53-aaccca1644d8)
 
-- Frontend
-- 
+- Hasil Frontend
+ 
 ![Frontend sentiment analysis](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/8d76a273-643f-4b66-90f8-7d61b76e21df)
 
 Pengujian lainnya kami letakkan di folder images.
