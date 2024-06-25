@@ -245,9 +245,13 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
 
     ![post_0_worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/2079b043-7031-4ed8-9f4f-aa3739d1efa9)
 
-  -Worker2
+  - Worker2
 
    ![post_0_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6029c698-0337-4b99-8f53-aaccca1644d8)
+
+- Frontend
+- 
+![Frontend sentiment analysis](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/8d76a273-643f-4b66-90f8-7d61b76e21df)
 
 Pengujian lainnya kami letakkan di folder images.
 
