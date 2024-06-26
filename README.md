@@ -47,25 +47,25 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 
 
 ## A. Rancangan Arsitektur Komputasi Awan
-Kelompok kami memutuskan untuk memakai rancangan yang disama ratakan keseluruhan dari spesifikasi VM, alasannya adalah kami menginginkan rancangan cloud yang berspesifikasi medium saja dan tidak terlalu mahal selain itu untuk karena cakupan Final Project ini hanya boleh menggunakan dana dengan maksimal total $60 harganya untuk itu kami ingin menganalisis apakah rancangan cloud kami dengan spesifikasi dibawah cukup efektif.
+Kelompok kami memutuskan untuk memakai rancangan yang disama ratakan keseluruhan dari spesifikasi VM, alasannya adalah kami menginginkan rancangan cloud yang memanfaatkan secara maksimal dana untuk sumber daya cloud saja selain itu karena cakupan Final Project ini hanya boleh menggunakan dana dengan maksimal total $65 harganya untuk itu kami ingin menganalisis apakah rancangan cloud kami dengan spesifikasi dibawah cukup efektif.
 
-![Cloud drawio](https://github.com/danendrafidel/FP-TKA/assets/150430084/b110221e-1ec8-4af2-a6d1-2f514f59a844)
+![Cloud drawio](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/09afd343-482f-4aa8-bee9-60ccbdbdbf24)
 
 Spesifikasi yang digunakan adalah sebagai berikut :
 
 | No | Nama              | Spesifikasi          | Fungsi         | Harga/Bulan |
 |----|-------------------|----------------------|----------------|-------------|
-| 1  | VM3-LoadBalancer  | Regular 1vCPU        | Load Balancer  | $12         |
+| 1  | VM3-LoadBalancer  | Premium Intel 2vCPU  | Load Balancer  | $21         |
 |    |                   | 2GB Memory           |                |             |
-| 2  | VM2-Worker        | Regular 1vCPU        | App Worker 1   | $12         |
+| 2  | VM2-Worker1       | Premium Intel 2vCPU  | App Worker 1   | $21         |
 |    |                   | 2GB Memory           |                |             |
-| 3  | VM2-Worker1       | Regular 1vCPU        | App Worker 2   | $12         |
+| 3  | VM2-Worker2       | Premium Intel 2vCPU  | App Worker 2   | $21         |
 |    |                   | 2GB Memory           |                |             |
-| 4  | VM3-Database      | Regular 1vCPU        | Database Server| $0          |
-|    |                   | 2GB Memory           |                |             |
-|    | **TOTAL**         |                      |                | **$48**     |
+| 4  | VM3-Database 1&2  | Menyesuaikan VM      | Database Server| $0          |
+|    |                   |                      |                |             |
+|    | **TOTAL**         |                      |                | **$63**     |
 
-Disini kami memakai 2 provider untuk membuat rancangan cloud ini yaitu `Digital Ocean dan Proxmox`, alasannya karena terdapat limitasi dalam pembuatan droplet pada digital ocean sebanyak 3 droplet saja yang sudah terpakai untuk load balancer dan 2 worker pada [digital ocean](https://www.digitalocean.com/), lalu untuk droplet database kami letakkan di provider [proxmox](https://www.proxmox.com/en/).
+Disini kami memakai provider untuk membuat rancangan cloud ini yaitu `Digital Ocean`, karena terdapat limitasi dalam pembuatan droplet pada digital ocean sebanyak 3 droplet saja yang sudah terpakai untuk load balancer dan 2 worker pada [digital ocean](https://www.digitalocean.com/), lalu untuk database MongoDB kami instal didalam vm worker 1 dan 2 untuk memaksimalkan dana spesifikasi vm worker dan load balancer sehingga untuk harga database itu sendiri menjadi gratis. 
 
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
@@ -235,28 +235,47 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
 - GET
   - Worker1
 
-    ![get_worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/d6f84829-8e6c-4de8-9281-a1d675258e7d)
+   ![get_worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/8fb9b99a-746d-43c0-82b8-6ab292f2f2e0)
 
   - Worker2
 
-    ![get_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/94cee059-287d-4740-b4b9-f1538023740b)
+   ![get_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/d2fe70fa-006b-4332-b34e-70b65c5ad32c)
 
 - POST
   - Worker1
 
-    ![post_0_worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/2079b043-7031-4ed8-9f4f-aa3739d1efa9)
+  ![post_0_worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/54dc7c12-655b-4726-a605-555df79ea89e)
 
   - Worker2
 
-   ![post_0_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6029c698-0337-4b99-8f53-aaccca1644d8)
+  ![post_0_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/506aa895-02e3-48e4-8fee-1841b66257f3)
 
 - Hasil Frontend
- 
-![Frontend sentiment analysis](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/8d76a273-643f-4b66-90f8-7d61b76e21df)
+
+![worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/46dcaa87-5495-4960-8b0b-46639c9d22b9)
+
+![worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/5006bc5e-4f2b-4843-819f-2477ad428e16)
+
 
 Pengujian lainnya kami letakkan di folder images.
 
 ## D. Hasil Pengujian Loadtesting
 Disini kami menggunakan LOCUST untuk pengujiannya
+
+- Spawn Rate 50
+
+![50sr (3)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6c6dffe0-c6f7-41da-b01a-8f87aa41edb8)
+
+- Spawn Rate 100
+
+![100sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/cae7dd17-4401-427e-bd2c-c363a239cef9)
+
+- Spawn Rate 200
+
+![200sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/b2e6ef9e-29a1-43af-b80a-3f313aea46b1)
+
+- Spawn Rate 500
+
+![500sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/4c18ed83-8d41-4614-9a1a-256ed6013392)
 
 ## E. Kesimpulan dan Saran
