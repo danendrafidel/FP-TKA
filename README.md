@@ -49,7 +49,7 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 ## A. Rancangan Arsitektur Komputasi Awan
 Kelompok kami memutuskan untuk memakai rancangan yang disama ratakan keseluruhan dari spesifikasi VM, alasannya adalah kami menginginkan rancangan cloud yang memanfaatkan secara maksimal dana untuk sumber daya cloud saja selain itu karena cakupan Final Project ini hanya boleh menggunakan dana dengan maksimal total $65 harganya untuk itu kami ingin menganalisis apakah rancangan cloud kami dengan spesifikasi dibawah cukup efektif.
 
-![Cloud drawio](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/09afd343-482f-4aa8-bee9-60ccbdbdbf24)
+![Cloud drawio (1)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/0852ebf7-e87f-4516-a7d9-167e522d706c)
 
 Spesifikasi yang digunakan adalah sebagai berikut :
 
