@@ -103,25 +103,31 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
   
   ![worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/e64e2a42-e565-4189-8fb4-ecad233db818)
 
-Pengujian lainnya kami letakkan di folder images.
+Pengujian lainnya dapat dilihat di folder images/endpoint dan images/frontend.
 
 ## D. Hasil Pengujian Loadtesting
-Disini kami menggunakan LOCUST untuk pengujiannya
+Disini kami menggunakan LOCUST untuk pengujiannya dan pengujian dilakukan pada vm load balancer 
 
-- Spawn Rate 50
+- Berapakah jumlah Request per seconds (RPS) maksimum yang dapat ditangani oleh server dengan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
 
-![50sr (3)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6c6dffe0-c6f7-41da-b01a-8f87aa41edb8)
+![50sr (3)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/a0834d66-90f2-4541-a74a-e70f4cae3adf)
 
-- Spawn Rate 100
+- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
+
+![50sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6f537cc8-036c-47c4-9361-a76ffa8f9bae)
+
+- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
 
 ![100sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/cae7dd17-4401-427e-bd2c-c363a239cef9)
 
-- Spawn Rate 200
+- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
 
 ![200sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/b2e6ef9e-29a1-43af-b80a-3f313aea46b1)
 
-- Spawn Rate 500
+- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
 
 ![500sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/4c18ed83-8d41-4614-9a1a-256ed6013392)
+
+Untuk image lain dapat dilihat di images/loadtesting.
 
 ## E. Kesimpulan dan Saran
