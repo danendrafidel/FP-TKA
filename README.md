@@ -106,7 +106,7 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
 Pengujian lainnya dapat dilihat di folder images/endpoint dan images/frontend.
 
 ## D. Hasil Pengujian Loadtesting
-Disini kami menggunakan LOCUST untuk pengujiannya dan pengujian dilakukan pada vm load balancer 
+Disini kami menggunakan LOCUST untuk pengujiannya dan pengujian dilakukan pada vm load balancer dengan ip 159.223.64.29
 
 ### **1. Berapakah jumlah Request per seconds (RPS) maksimum yang dapat ditangani oleh server dengan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
@@ -138,6 +138,6 @@ RPS yang didapatkan dengan spawn rate 200 adalah 329.8 RPS dengan rata-rata RPS 
 
 RPS yang didapatkan dengan spawn rate 500 adalah 299.6 RPS dengan rata-rata RPS 44.94 poin
 
-Untuk image lain dapat dilihat di images/loadtesting.
+Untuk image lain mengenai loadtesting dapat dilihat di images/loadtesting.
 
 ## E. Kesimpulan dan Saran
