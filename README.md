@@ -69,9 +69,9 @@ Disini kami memakai provider untuk membuat rancangan cloud ini yaitu `Digital Oc
 
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
-1. Setup Database
-2. Setup Worker
-3. Setup Load Balancer
+### **1. Setup Database**
+### **2. Setup Worker**
+### **3. Setup Load Balancer**
 
 ## C. Hasil Pengujian Endpoint
 Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET` pada backend.
