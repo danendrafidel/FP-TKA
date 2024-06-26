@@ -70,165 +70,8 @@ Disini kami memakai provider untuk membuat rancangan cloud ini yaitu `Digital Oc
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
 1. Setup Database
-```sh
-#!/bin/bash
-
-echo "Installing docker..."
-sudo apt update
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-sudo apt install docker-ce -y
-# sudo systemctl status docker
-echo "Installing docker done!!"
-
-echo "version: '3'
-
-services:
-  mongodb:
-    image: mongo
-    command: mongod --bind_ip_all
-    ports:
-      - \"27017:27017\"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin
-    volumes:
-      - mongodb_data:/data/db
-  mongo-express:
-    image: mongo-express
-    ports:
-      - \"8082:8081\"
-    environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=admin
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
-      - ME_CONFIG_BASICAUTH_USERNAME=admin
-      - ME_CONFIG_BASICAUTH_PASSWORD=admin
-    depends_on:
-      - mongodb
-volumes:
-  mongodb_data:
-    driver: local" >docker-compose.yml
-
-sudo docker compose up -d
-sudo docker ps -a
-```
 2. Setup Worker
-```sh
-#!/bin/bash
-
-echo "Installing docker..."
-sudo apt update
-sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
-sudo apt install docker-ce -y
-# sudo systemctl status docker
-echo "Installing docker done!!"
-
-echo "Installing python..."
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3.8 -y
-echo "Installing python done!!"
-
-echo "Installing pip..."
-sudo apt install python3-pip -y
-pip3 install fastapi==0.78.0 uvicorn==0.18.2 pymongo pydantic uuid Flask Flask-PyMongo
-
-echo "fastapi==0.78.0
-uvicorn==0.18.2
-pymongo
-pydantic
-uuid
-Flask
-Flask-PyMongo
-gunicorn" >requirements.txt
-
-echo "Configure docker file..."
-echo "FROM python:3.9-slim" >Dockerfile
-echo "WORKDIR /app" >>Dockerfile
-echo "COPY . /app" >>Dockerfile
-echo "RUN pip install -r requirements.txt" >>Dockerfile
-echo 'CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "main:app"]' >>Dockerfile
-
-echo "GO GO GO!!!!"
-sudo docker build -t fp-app -f Dockerfile .
-sudo docker run -p 8000:8000 -d fp-app
-```
 3. Setup Load Balancer
-```sh
-#!/bin/bash
-
-sudo apt update
-
-echo "Installing nginx..."
-sudo apt install nginx
-
-sudo mkdir /var/cache/nginx
-sudo mkdir /var/cache/nginx2
-sudo chown www-data:www-data /var/cache/nginx
-sudo chown www-data:www-data /var/cache/nginx2
-
-# Konten konfigurasi Nginx
-echo "proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=cache1:10m inactive=60m;
-
-upstream app {
-    server 172.208.23.151:8000;
-    server 172.208.82.223:8000;
-}
-
-server {
-    listen 80;
-    server_name _;
-
-    location / {
-        proxy_pass http://app;
-        proxy_cache cache1;
-        proxy_cache_valid any 10m;
-    }
-}
-" | sudo tee /etc/nginx/sites-available/my_proxy
-
-echo "proxy_cache_path /var/cache/nginx2 levels=1:2 keys_zone=cache2:10m inactive=60m;
-
-upstream app2 {
-    server 172.171.251.101:8000;
-    server 172.171.253.255:8000;
-    server 40.76.121.74:8000;
-}
-
-server {
-    listen 8000;
-    server_name _;
-
-    location / {
-        proxy_pass http://app2;
-        proxy_cache cache2;
-        proxy_cache_valid any 10m;
-    }
-}
-" | sudo tee /etc/nginx/sites-available/my_proxy_2
-
-# Membuat tautan simbolik ke sites-enabled
-sudo ln -s /etc/nginx/sites-available/my_proxy "/etc/nginx/sites-enabled/"
-sudo ln -s /etc/nginx/sites-available/my_proxy_2 "/etc/nginx/sites-enabled/"
-
-sudo rm /etc/nginx/sites-enabled/default
-
-# Melakukan uji sintaks konfigurasi Nginx
-sudo nginx -t
-
-# Merestart Nginx untuk menerapkan konfigurasi baru
-sudo systemctl restart nginx
-
-sudo ufw status
-sudo ufw enable
-sudo ufw allow 80
-sudo ufw allow 8000
-```
 
 ## C. Hasil Pengujian Endpoint
 Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET` pada backend.
@@ -252,10 +95,13 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
 
 - Hasil Frontend
 
-![worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/46dcaa87-5495-4960-8b0b-46639c9d22b9)
+  - Worker1
+    
+  ![worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/5006bc5e-4f2b-4843-819f-2477ad428e16)
 
-![worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/5006bc5e-4f2b-4843-819f-2477ad428e16)
-
+  - Worker2
+  
+  ![worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/e64e2a42-e565-4189-8fb4-ecad233db818)
 
 Pengujian lainnya kami letakkan di folder images.
 
