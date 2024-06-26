@@ -16,7 +16,7 @@ Anda adalah seorang lulusan Teknologi Informasi, sebagai ahli IT, salah satu kem
 
 Pada suatu saat anda mendapatkan project untuk mendeploy sebuah aplikasi [Sentiment Analysis](https://github.com/fuaddary/fp-tka/blob/main/Resources/BE/sentiment-analysis.py) dengan komponen Backend menggunakan python: sentiment-analysis.py dengan spesifikasi sebagai berikut
 
-### Endpoints:
+# Endpoints:
 1. Analyze Text
    - Endpoint: `POST /analyze`
    - Description: This endpoint accepts a text input and returns the sentiment score of the text.
@@ -75,7 +75,7 @@ Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal
 
 ## C. Hasil Pengujian Endpoint
 Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET` pada backend.
-- GET
+### **1. GET**
   - Worker1
 
    ![get_worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/8fb9b99a-746d-43c0-82b8-6ab292f2f2e0)
@@ -84,7 +84,7 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
 
    ![get_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/d2fe70fa-006b-4332-b34e-70b65c5ad32c)
 
-- POST
+### **2. POST**
   - Worker1
 
   ![post_0_worker1](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/54dc7c12-655b-4726-a605-555df79ea89e)
@@ -93,7 +93,7 @@ Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan
 
   ![post_0_worker2](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/506aa895-02e3-48e4-8fee-1841b66257f3)
 
-- Hasil Frontend
+### **3. Hasil Frontend**
 
   - Worker1
     
@@ -108,25 +108,35 @@ Pengujian lainnya dapat dilihat di folder images/endpoint dan images/frontend.
 ## D. Hasil Pengujian Loadtesting
 Disini kami menggunakan LOCUST untuk pengujiannya dan pengujian dilakukan pada vm load balancer 
 
-- Berapakah jumlah Request per seconds (RPS) maksimum yang dapat ditangani oleh server dengan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
+### **1. Berapakah jumlah Request per seconds (RPS) maksimum yang dapat ditangani oleh server dengan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
 ![50sr (3)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/a0834d66-90f2-4541-a74a-e70f4cae3adf)
 
-- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
+RPS tertinggi yang bisa didapat dari rancangan cloud kami adalah 490.4 RPS dengan rata-rata RPS 73.56 poin
+
+### **2. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
 ![50sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6f537cc8-036c-47c4-9361-a76ffa8f9bae)
 
-- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
+RPS yang didapatkan dengan spawn rate 50 adalah 341.4 RPS dengan rata-rata RPS 51.21 poin
+
+### **3. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
 ![100sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/cae7dd17-4401-427e-bd2c-c363a239cef9)
 
-- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
+RPS yang didapatkan dengan spawn rate 100 adalah 328.7 RPS dengan rata-rata RPS 49.305 poin
+
+### **4. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
 ![200sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/b2e6ef9e-29a1-43af-b80a-3f313aea46b1)
 
-- Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)
+RPS yang didapatkan dengan spawn rate 200 adalah 329.8 RPS dengan rata-rata RPS 49.47 poin
+
+### **5. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
 ![500sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/4c18ed83-8d41-4614-9a1a-256ed6013392)
+
+RPS yang didapatkan dengan spawn rate 500 adalah 299.6 RPS dengan rata-rata RPS 44.94 poin
 
 Untuk image lain dapat dilihat di images/loadtesting.
 
