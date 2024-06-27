@@ -74,6 +74,8 @@ Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal
 
 ![Cuplikan layar 2024-06-27 220108](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/47d45ef7-6a8f-4e0d-989d-a47f3816252f)
 
+Pada dashboard ini menampilkan 3 droplets vm yang kami install dan gunakan.
+
 ### **1. Setup Worker**
 
 ![Cuplikan layar 2024-06-27 220731](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/89234ccf-e323-433f-901f-789a05a64a49)
