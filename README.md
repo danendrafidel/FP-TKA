@@ -70,7 +70,7 @@ Disini kami memakai provider untuk membuat rancangan cloud ini yaitu `Digital Oc
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
 
-### **0. Dashboard Project Digital Ocean**
+### **0. Dashboard Final Project pada Digital Ocean**
 
 ![Cuplikan layar 2024-06-27 220108](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/47d45ef7-6a8f-4e0d-989d-a47f3816252f)
 
