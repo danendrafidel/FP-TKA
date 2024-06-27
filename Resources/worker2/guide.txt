@@ -41,7 +41,7 @@ Langkah-langkah untuk mengatur VM menjadi worker sekaligus database:
         chmod +x worker.sh
         ./worker.sh
 
-2. Edit file url BE yang ada di fp-tka/Resources/FE/index.html: 68.183.231.98:5000.
+2. Edit file url BE yang ada di fp-tka/Resources/FE/index.html: 165.22.241.204:5000.
 
 3. Copy file index.html dan styles.css ke /var/www/html:
     cp index.html /var/www/html
