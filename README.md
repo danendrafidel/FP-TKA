@@ -69,9 +69,22 @@ Disini kami memakai provider untuk membuat rancangan cloud ini yaitu `Digital Oc
 
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
-### **1. Setup Database**
-### **2. Setup Worker**
-### **3. Setup Load Balancer**
+
+### **0. Dashboard Project Digital Ocean**
+
+![Cuplikan layar 2024-06-27 220108](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/47d45ef7-6a8f-4e0d-989d-a47f3816252f)
+
+### **1. Setup Worker**
+
+![Cuplikan layar 2024-06-27 220731](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/89234ccf-e323-433f-901f-789a05a64a49)
+
+![Cuplikan layar 2024-06-27 220754](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/1dad1a5d-f23b-43bc-9523-8dfcf95dd9d9)
+
+### **2. Setup Load Balancer**
+
+![Cuplikan layar 2024-06-27 220816](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/c2d440eb-cb94-4633-8973-a68eef892b56)
+
+### **3. Setup Database**
 
 ## C. Hasil Pengujian Endpoint
 Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET` pada backend.
