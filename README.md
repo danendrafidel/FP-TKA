@@ -159,3 +159,20 @@ Untuk image lain mengenai loadtesting dapat dilihat di images/loadtesting.
 
 ## E. Kesimpulan dan Saran
 
+Berdasarkan uji coba yang telah dilakukan, didapatkan beberapa hasil yaitu :
+
+1. Jumlah Request per seconds (RPS) maksimum yang dapat ditangani oleh server dengan durasi waktu load testing selama 60 detik adalah sebesar 490.4 RPS dengan 0% failure.
+2. Jumlah peak concurrency maksimum maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing selama 60 detik adalah sebanyak 341.4 RPS dengan 0% failure.
+3. Jumlah peak concurrency maksimum maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing selama 60 detik adalah sebanyak 328.7 RPS dengan 0% failure.
+4. Jumlah peak concurrency maksimum maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing selama 60 detik adalah sebanyak 329.8 RPS dengan 0% failure.
+5. Jumlah peak concurrency maksimum maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing selama 60 detik adalah sebanyak 299.6 RPS dengan 0% failure.
+
+Analisis :
+
+Kelebihan Arsitektur 2 Worker:
+1. Kinerja yang Stabil: Arsitektur 2 worker memberikan kinerja yang stabil dengan jumlah RPS yang tinggi tanpa failure.
+2. Manajemen Sumber Daya: Dengan dua worker, menjadi lebih mudah untuk mengelola sumber daya server tanpa membebani sistem secara berlebihan dibanding worker lebih dari 2.
+
+Berdasarkan data uji coba tersebut, dapat ditarik kesimpulan bahwa 2 Worker lebih stabil dibandingkan worker lebih dari 2. Hal ini disebabkan karena beberapa faktor, yaitu:
+1. Pada 2 worker (premium intel 2cpu, 2gb) dari segi ukuran cukup masif. Jika ingin menambah jumlah worker dengan ukuran yang lebih kecil maka perbandingan untuk jumlah worker juga harus setara,  hal ini belum kami terapkan dikarekan keterbatasan resource dari digital ocean sendiri sehingga kami ingin memanfaatkan hanya dengan worker yang lebih sedikit namun spesifikasi yang lebih masif.
+2. Pada saat pertama kali dilakukan uji coba, kami tidak pernah menghapus data pada database sehingga hal ini membuat database penuh, sehingga hal ini dapat teratasi setelah kami menghapus datanya.
