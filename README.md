@@ -167,12 +167,19 @@ Berdasarkan uji coba yang telah dilakukan, didapatkan beberapa hasil yaitu :
 4. Jumlah peak concurrency maksimum maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing selama 60 detik adalah sebanyak 329.8 RPS dengan 0% failure.
 5. Jumlah peak concurrency maksimum maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing selama 60 detik adalah sebanyak 299.6 RPS dengan 0% failure.
 
-Analisis :
+Analisis Kelebihan Arsitektur 2 Worker:
 
-Kelebihan Arsitektur 2 Worker:
 1. Kinerja yang Stabil: Arsitektur 2 worker memberikan kinerja yang stabil dengan jumlah RPS yang tinggi tanpa failure.
-2. Manajemen Sumber Daya: Dengan dua worker, menjadi lebih mudah untuk mengelola sumber daya server tanpa membebani sistem secara berlebihan dibanding worker lebih dari 2 dan juga 2 worker bisa dibilang lebih efisien dibanding nanti membuat worker lebih dari 2
+2. Manajemen Sumber Daya: Dengan dua worker, menjadi lebih mudah untuk mengelola sumber daya server tanpa membebani sistem secara berlebihan dibanding worker yang lebih banyak dan juga 2 worker bisa dibilang lebih efisien dibanding nanti membuat worker lebih dari 2
 
-Berdasarkan data uji coba tersebut, dapat ditarik kesimpulan bahwa 2 Worker lebih stabil dibandingkan worker lebih dari 2. Hal ini disebabkan karena beberapa faktor, seperti :
+Berdasarkan data uji coba tersebut, dapat ditarik kesimpulan bahwa 2 Worker lebih stabil dibandingkan worker yang lebih banyak. Hal ini disebabkan karena beberapa faktor, seperti :
+
 1. Pada 2 worker (premium intel 2cpu, 2gb) dari segi ukuran cukup masif. Jika ingin menambah jumlah worker harus dengan ukuran spesifikasi yang lebih kecil karena keterbatasan dana untuk pengetesan, selain itu hal ini belum kami terapkan karena keterbatasan resource dari digital ocean sendiri untuk membuat droplet lebih dari 3 sehingga kami ingin memanfaatkan hanya dengan worker yang lebih sedikit namun dengan spesifikasi yang lebih masif.
 2. Pada saat pertama kali dilakukan uji coba, kami tidak pernah menghapus data pada database sehingga hal ini membuat database penuh, sehingga hal ini dapat teratasi setelah kami menghapus datanya.
+3. Pada rancangan kami MongoDB diinstal pada setiap worker yang ada sehingga kami tidak perlu mengeluarkan biaya untuk membuat droplet untuk MongoDB sehingga ini menjadi poin plus untuk pemanfaatan resource yang ada dengan dana yang lebih minim, ini juga menjadi poin penting dalam melakukan load testing dimana database yang langsung terintegrasi/terpasang di worker membuat RPS yang diraih lebih tinggi dibanding MongoDB yang dibuat dengan droplet terpisah alasannya karena MongoDB menjadi lebih efisien dan cepat untuk diakses.
+
+Saran :
+
+Dari rancangan arsitektur kami mungkin bisa menjadi lebih baik hasilnya apabila spesifikasi VM dapat ditingkatkan lagi jika ada dana lebih besar, kemudian untuk setup VM mungkin juga bisa diconfig kembali agar menjadi lebih maksimal sehingga dampaknya untuk pengujian loadtesting bisa mendapat RPS yang lebih tinggi.
+
+
