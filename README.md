@@ -183,4 +183,6 @@ Saran :
 
 Dari rancangan arsitektur kami mungkin bisa menjadi lebih baik hasilnya apabila spesifikasi VM dapat ditingkatkan lagi jika ada dana lebih besar, kemudian untuk setup VM mungkin juga bisa diconfig kembali agar menjadi lebih maksimal sehingga dampaknya untuk pengujian loadtesting bisa mendapat RPS yang lebih tinggi.
 
+## F. VIDEO REVISI
 
+https://youtu.be/LGArzSqM3eM
