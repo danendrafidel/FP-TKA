@@ -176,12 +176,14 @@ Langkah-langkah untuk mengatur VM menjadi load balancer:
         sudo unlink /etc/nginx/sites-available/default
 
         # Create a new nginx configuration file for the application
- 
+        ...
+   
         # Enable the new configuration
         sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled
 
         # Modify the nginx.conf file
-
+        ...
+   
         # Restart nginx to apply changes
         sudo systemctl restart nginx
 
