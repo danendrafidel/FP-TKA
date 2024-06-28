@@ -177,6 +177,7 @@ Berdasarkan data uji coba tersebut, dapat ditarik kesimpulan bahwa 2 Worker lebi
 1. Pada 2 worker (premium intel 2cpu, 2gb) dari segi ukuran cukup masif. Jika ingin menambah jumlah worker harus dengan ukuran spesifikasi yang lebih kecil karena keterbatasan dana untuk pengetesan, selain itu hal ini belum kami terapkan karena keterbatasan resource dari digital ocean sendiri untuk membuat droplet lebih dari 3 sehingga kami ingin memanfaatkan hanya dengan worker yang lebih sedikit namun dengan spesifikasi yang lebih masif.
 2. Pada saat pertama kali dilakukan uji coba, kami tidak pernah menghapus data pada database sehingga hal ini membuat database penuh, sehingga hal ini dapat teratasi setelah kami menghapus datanya.
 3. Pada rancangan kami MongoDB diinstal pada setiap worker yang ada sehingga kami tidak perlu mengeluarkan biaya untuk membuat droplet untuk MongoDB sehingga ini menjadi poin plus untuk pemanfaatan resource yang ada dengan dana yang lebih minim, ini juga menjadi poin penting dalam melakukan load testing dimana database yang langsung terintegrasi/terpasang di worker membuat RPS yang diraih lebih tinggi dibanding MongoDB yang dibuat dengan droplet terpisah alasannya karena MongoDB menjadi lebih efisien dan cepat untuk diakses.
+4. Pada saat dilakukan pengujian load balancing, kami memanfaatan caching sehingga tiap kali melakukan request kepada server load balancing akan terasa ringan.
 
 Saran :
 
