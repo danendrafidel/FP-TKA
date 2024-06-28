@@ -376,4 +376,4 @@ https://youtu.be/LGArzSqM3eM
 
 ![Cuplikan layar 2024-06-28 181004](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/e414061f-497d-40c6-9e75-789e72217d8e)
 
-Hasil terbaru loadtesting dengan spawan rate 50, 100, 200, 500 dari demo revisi diatas.
+Hasil terbaru loadtesting dengan spawan rate 50, 100, 200, 500 dari demo revisi diatas, bisa dilihat hasil RPS loadtestingnya lebih tinggi dari pengujian sebelumnya.
