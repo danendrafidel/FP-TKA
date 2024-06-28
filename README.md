@@ -67,7 +67,7 @@ Spesifikasi yang digunakan adalah sebagai berikut :
 
 Disini kami memakai provider untuk membuat rancangan cloud ini yaitu `Digital Ocean` dengan server singapore, karena terdapat limitasi dalam pembuatan droplet pada digital ocean sebanyak 3 droplet saja yang sudah terpakai untuk load balancer dan 2 worker pada [digital ocean](https://www.digitalocean.com/), lalu untuk database MongoDB kami instal didalam vm worker 1 dan 2 untuk memaksimalkan dana spesifikasi vm worker dan load balancer sehingga untuk harga database itu sendiri menjadi gratis.
 
-Lalu mengapa harga premium intel bisa $21 bukan $24 karena kami disini awalnya memakai basic cpu terlebih dahulu untuk membuat ketiga dropletnya terlebih dahulu setelah itu pada fitur upgrade kami melakukan upgrade ke spesifikasi premium intel untuk mendapatkan harga $21/vm yang menyebabkan harganya lebih murah $3.
+Lalu mengapa harga premium intel bisa $21 bukan $24 karena kami disini awalnya memakai basic cpu (2cpu, 1gb) terlebih dahulu untuk membuat ketiga dropletnya terlebih dahulu setelah itu pada fitur upgrade kami melakukan upgrade ke spesifikasi premium intel untuk mendapatkan harga $21/vm yang menyebabkan harganya lebih murah $3.
 
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
 Uji coba pada rancangan cloud kami memerlukan beberapa setup yang perlu diinstal dalam vm yang dibutuhkan maka dari itu berikut beberapa pengimplementasiannya : 
