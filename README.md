@@ -84,6 +84,72 @@ Pada dashboard ini menampilkan 3 droplets vm yang kami install dan gunakan.
 
 ![Cuplikan layar 2024-06-27 220754](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/1dad1a5d-f23b-43bc-9523-8dfcf95dd9d9)
 
+Langkah-langkah untuk mengatur VM menjadi worker sekaligus database:
+
+1. Buat dan jalankan script `worker.sh`:
+
+    a. Buat file `worker.sh` dengan isi berikut:
+
+        #!/bin/bash
+
+        # Clone repository
+        git clone https://github.com/fuaddary/fp-tka.git
+
+        # Change directory to BE folder
+        cd fp-tka/Resources/BE
+
+        # Setup MongoDB
+        sudo apt update
+        sudo apt install -y mongodb
+        sudo systemctl start mongodb
+        sudo systemctl enable mongodb
+
+        # Verify MongoDB installation
+        if mongosh --eval "db.runCommand({ connectionStatus: 1 })"; then
+            echo "MongoDB setup successfully."
+        else
+            echo "MongoDB setup failed."
+            exit 1
+        fi
+
+        # Setup Python environment and install dependencies
+        sudo apt install -y python3-venv
+        python3 -m venv venv
+        source venv/bin/activate
+        pip install flask flask-cors textblob pymongo
+
+        # Rename the sentiment analysis file
+        mv sentiment-analysis.py sentiment_analysis.py
+
+        # Increase file descriptor limit
+        ulimit -n 100000
+
+    b. Jalankan script `worker.sh`:
+
+        chmod +x worker.sh
+        ./worker.sh
+
+2. Edit file url BE yang ada di `fp-tka/Resources/FE/index.html`: worker1=`68.183.231.98:5000` dan worker2=`165.22.241.204:5000`.
+
+3. Copy file [index.html](https://github.com/danendrafidel/FP-TKA-C6/blob/main/Resources/worker1/FE/index.html) dan [styles.css](https://github.com/danendrafidel/FP-TKA-C6/blob/main/Resources/worker1/FE/styles.css) ke `/var/www/html`:
+
+        cp index.html /var/www/html
+        cp styles.css /var/www/html
+
+4. Buat dan jalankan script `run.sh` untuk mnjalankan gunicorn:
+
+    a. Buat file `run.sh` dengan isi berikut:
+
+        #!/bin/bash
+
+        source venv/bin/activate
+        gunicorn -b 0.0.0.0:5000 -w 5 -k gevent --timeout 60 --graceful-timeout 60 sentiment_analysis:app
+
+    b. Jalankan script `run.sh`:
+
+        chmod +x run.sh
+        ./run.sh
+
 ### **2. Setup Load Balancer**
 
 ![Cuplikan layar 2024-06-27 220816](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/c2d440eb-cb94-4633-8973-a68eef892b56)
