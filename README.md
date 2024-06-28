@@ -69,6 +69,8 @@ Disini kami memakai provider untuk membuat rancangan cloud ini yaitu `Digital Oc
 
 ![Cuplikan layar 2024-06-29 012712](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/ddadaab8-f9b5-4c09-aedc-211f267e6a55)
 
+![Cuplikan layar 2024-06-29 013438](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/835b5e17-9812-4473-9b12-08b3c2f5a6f9)
+
 Lalu mengapa harga premium intel bisa $21 bukan $24 karena kami disini awalnya memakai basic cpu (2cpu, 1gb) terlebih dahulu untuk membuat ketiga dropletnya terlebih dahulu setelah itu pada fitur upgrade kami melakukan upgrade ke spesifikasi premium intel untuk mendapatkan harga $21/vm yang menyebabkan harganya lebih murah $3. Selain itu spesifikasi premium intel yang ditawarkan pada awal pembuatan droplet memiliki storage 90gb sedangkan spesifikasi yang kami pilih pada fitur upgrade droplet storagenya 50gb, itulah alasan mengapa harga dropletnya menjadi lebih murah.
 
 ## B. Implementasi Rancangan Arsitektur Komputasi Awan
