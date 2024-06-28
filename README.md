@@ -273,8 +273,6 @@ Langkah-langkah untuk mengatur VM menjadi load balancer:
         chmod +x lb.sh
         ./lb.sh
 
-### **3. Setup Database**
-
 ## C. Hasil Pengujian Endpoint
 Disini kami menggunakan software Postman untuk pengujian endpoint dari rancangan cloud diatas untuk menguji `POST` dan `GET` pada backend.
 ### **1. GET**
