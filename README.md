@@ -136,7 +136,7 @@ Langkah-langkah untuk mengatur VM menjadi worker sekaligus database:
         cp index.html /var/www/html
         cp styles.css /var/www/html
 
-4. Buat dan jalankan script `run.sh` untuk mnjalankan gunicorn:
+4. Buat dan jalankan script `run.sh` untuk menjalankan gunicorn:
 
     a. Buat file `run.sh` dengan isi berikut:
 
