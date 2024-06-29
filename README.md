@@ -248,15 +248,11 @@ RPS tertinggi yang bisa didapat dari rancangan cloud kami adalah 490.4 RPS denga
 
 ### **2. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
-![50sr](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/70c2b69f-ea77-4648-92fb-c54d9b35cdd0)
-
 ![50sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/6f537cc8-036c-47c4-9361-a76ffa8f9bae)
 
 RPS yang didapatkan dengan spawn rate 50 adalah 341.4 RPS dengan rata-rata RPS 51.21 poin
 
 ### **3. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
-
-![100sr](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/ed6fcbdd-9d77-4e85-b49d-572234d4837a)
 
 ![100sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/cae7dd17-4401-427e-bd2c-c363a239cef9)
 
@@ -264,15 +260,11 @@ RPS yang didapatkan dengan spawn rate 100 adalah 328.7 RPS dengan rata-rata RPS 
 
 ### **4. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
 
-![200sr](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/7ff5ff16-16ad-42fa-a370-02b10c7240e2)
-
 ![200sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/b2e6ef9e-29a1-43af-b80a-3f313aea46b1)
 
 RPS yang didapatkan dengan spawn rate 200 adalah 329.8 RPS dengan rata-rata RPS 49.47 poin
 
 ### **5. Berapa jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing 60 detik? (tingkat failure harus 0%)**
-
-![500sr](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/696635ac-9541-4f07-8ff4-78303452c7a5)
 
 ![500sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/4c18ed83-8d41-4614-9a1a-256ed6013392)
 
