@@ -294,17 +294,17 @@ Analisis Kelebihan Arsitektur 2 Worker:
 Berdasarkan data uji coba tersebut, dapat ditarik kesimpulan bahwa 2 Worker lebih stabil dibandingkan worker yang lebih banyak. Hal ini disebabkan karena beberapa faktor, seperti :
 
 1. Pada 2 worker (premium intel 2cpu, 2gb) dari segi ukuran cukup masif. Jika ingin menambah jumlah worker harus dengan ukuran spesifikasi yang lebih kecil karena keterbatasan dana untuk pengetesan, selain itu hal ini belum kami terapkan karena keterbatasan resource dari digital ocean sendiri untuk membuat droplet lebih dari 3 sehingga kami ingin memanfaatkan hanya dengan worker yang lebih sedikit namun dengan spesifikasi yang lebih masif.
-2. Pada saat pertama kali dilakukan uji coba, kami tidak pernah menghapus data pada database sehingga hal ini membuat database penuh, sehingga hal ini dapat teratasi setelah kami menghapus datanya.
+2. Pada saat pertama kali dilakukan uji coba, kami tidak pernah menghapus data pada database sehingga hal ini membuat database penuh, sehingga hal ini dapat teratasi setelah kami menghapus datanya setiap ingin melakukan uji dengan spawn rate loadtesting yang berbeda.
 3. Pada rancangan kami MongoDB diinstal pada setiap worker yang ada sehingga kami tidak perlu mengeluarkan biaya untuk membuat droplet untuk MongoDB sehingga ini menjadi poin plus untuk pemanfaatan resource yang ada dengan dana yang lebih minim, ini juga menjadi poin penting dalam melakukan load testing dimana database yang langsung terintegrasi/terpasang di worker membuat RPS yang diraih lebih tinggi dibanding MongoDB yang dibuat dengan droplet terpisah alasannya karena MongoDB menjadi lebih efisien dan cepat untuk diakses.
 4. Pada saat dilakukan pengujian load balancing, kami memanfaatan caching sehingga tiap kali melakukan request kepada server load balancing akan terasa ringan.
 
 Saran :
 
-Dari rancangan arsitektur kami mungkin bisa menjadi lebih baik hasilnya apabila spesifikasi VM dapat ditingkatkan lagi jika ada dana lebih besar, kemudian untuk setup VM mungkin juga bisa diconfig kembali agar menjadi lebih maksimal sehingga dampaknya untuk pengujian loadtesting bisa mendapat RPS yang lebih tinggi.
+Dari rancangan arsitektur kami mungkin bisa menjadi lebih baik hasilnya apabila spesifikasi VM dapat ditingkatkan lagi jika ada dana lebih besar, kemudian untuk setup VM mungkin juga bisa diconfig kembali agar menjadi lebih maksimal, lalu usahakan menggunakan jaringan yang stabil dan kencang karena dampaknya dalam pengujian loadtesting bisa mendapat RPS yang lebih tinggi.
 
 ## F. VIDEO REVISI
 
-https://youtu.be/LGArzSqM3eM
+[REVISI](https://youtu.be/LGArzSqM3eM)
 
 ![Cuplikan layar 2024-06-28 181004](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/e414061f-497d-40c6-9e75-789e72217d8e)
 
