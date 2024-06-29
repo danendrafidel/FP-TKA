@@ -268,11 +268,13 @@ RPS yang didapatkan dengan spawn rate 200 adalah 329.8 RPS dengan rata-rata RPS 
 
 ![500sr (2)](https://github.com/danendrafidel/FP-TKA-C6/assets/150430084/4c18ed83-8d41-4614-9a1a-256ed6013392)
 
+RPS yang didapatkan dengan spawn rate 500 adalah 299.6 RPS dengan rata-rata RPS 44.94 poin
+
 ## Rata-rata resource utilization dari 4 percobaan
 
 ![htop_lb](https://github.com/danendrafidel/FP-TKA-C6/assets/144349814/3e490c64-65c1-4bc6-a184-595538156577)
 
-RPS yang didapatkan dengan spawn rate 500 adalah 299.6 RPS dengan rata-rata RPS 44.94 poin
+Dapat dilihat dalam penggunaan cpu dan memory pada resource utilization cukup maksimal dapat disimpulkan bahwa resource termanfaatkan sepenuhnya
 
 Untuk image lain mengenai loadtesting dapat dilihat di images/loadtesting.
 
